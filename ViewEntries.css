@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------------------NAV BAR --------------------- */
+nav{
+    background: rgb(77, 142, 228);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 7vh;
+}
+
+nav ul li a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+/* --------------------------------------------- */
+.container{
+    margin: 5px;
+    width: 100vw;
+}
+
+table {
+    margin: 5%;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+th, td {
+    border: 1px solid #000000;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #a5a1a1;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+</head>
+<link rel="stylesheet" href="AddEmployee.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<body>
+
+    <nav>
+        <ul>
+            <li> <a href="#">Add Employee</a> </li>
+            <!-- <li> <a href="/ViewEntries.html">View Entries</a> </li> -->
+        </ul>
+    </nav>
+
+    <!-- ---------------------------------- Input Form ---------------------------------- -->
+    <!-- ---------------------------------- Input Form ---------------------------------- -->
+    <!-- ---------------------------------- Input Form ---------------------------------- -->
+    <div class="form_container">
+        <div id="employeeForm">
+            <h1>Add Employee</h1>
+            <div id="error"></div>
+            <label style="display: inline;" for="id">ID:</label>
+            <input type="number" id="id" name="id" required>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="18" max="60" required>
+
+            <label for="designation">Designation:</label>
+            <select id="designation" name="designation" required>
+                <option value=""></option>
+                <option value="developer">Developer</option>
+                <option value="manager">Manager</option>
+                <option value="tester">Tester</option>
+                <option value="hr">HR</option>
+            </select>
+
+            <label for="url">URL:</label>
+            <input type="url" id="url" name="url" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value=""></option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+            </select>
+            <button class="button" type="button" onclick="addEmployee()">Add Employee</button>
+
+        </div>
+    </div>
+
+    <!-- ----------------------------------ViewModal----------------------------- -->
+    <div id="viewModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content bgImg">
+            <span id="close" onclick="closeViewModal()">CLOSE</span>
+            <table id="viewTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Designation</th>
+                        <th>Gender</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody class="viewModalBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- --------------------------------------editModal-------------------------------------------------- -->
+    <div id="editModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div ></div>
+            <span id="closeEditModal" onclick="closeEditModal()">CLOSE</span>
+            <form id="editForm">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Designation</th>
+                            <th>Gender</th>
+                            <th>URL</th>
+                        </tr>
+                    </thead>
+                    <tbody class="editModalBody">
+                    </tbody>
+                </table>
+            </form>
+            <button type="submit" id="editModalSubmitButton" onclick="saveEditedEntry()">SAVE</button>
+        </div>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------- -->
+
+    <h1>Employee Entries</h1>
+    <table id="employeeTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Designation</th>
+                <th>Gender</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTable_body"></tbody>
+    </table>
+
+    <!-- ---------------------------------- Input Form ---------------------------------- -->
+
+
+
+
+    <script src="data.js"></script>
+
+</body>
+
+</html>

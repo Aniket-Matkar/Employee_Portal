@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: rgb(202, 199, 199);
+}
+
+/* -------------------------NAV BAR --------------------- */
+nav {
+    background: rgb(77, 142, 228);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 7vh;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+/* -------------------------NAV BAR --------------------- */
+#error{
+    color: red;
+    font-weight: bold;
+}
+#error2{
+    color: red;
+    font-weight: bold;
+}
+
+.form_container {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 8px;
+    background: white;
+    margin: 1% auto;
+    padding: 3%;
+    /* display: flex; */
+    justify-content: center;
+    width: 40%;
+}
+
+.form_items {
+    margin: 3px;
+}
+
+.button {
+    margin-top: 5px;
+    padding: 5px;
+    width: 100%;
+    background: blue;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    color: white;
+}
+
+#employeeForm {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+select {
+    height: 20px;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 255, 0.438);
+    border-radius: 5px;
+}
+
+/* ------------------------------------------------- */
+
+/* .container{
+    margin: 5px;
+    width: 100vw;
+} */
+
+table {
+    margin: 5%;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+th,
+td {
+    border: 1px solid #000000;
+    text-align: left;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.973);
+}
+
+th {
+    background-color: #a5a1a1;
+}
+
+td img {
+    height: 25px;
+    width: 25px;
+}
+
+#act {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* ----------------------------------modal style------------------- */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+.bgImg{
+    background-image: url("") !important;
+    /* z-index: 99; */
+}
+
+/* The Close Button */
+#close {
+    color: #b12b2b;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#close:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#editModalSubitButton {
+    color: rgb(96, 96, 231);
+    border-radius: 1px solid rgb(70, 70, 209);
+    border-radius: 4px;
+    padding: 9px 14px;
+}
+.modalImages{
+    height: 150px;
+    width: 300px;
+}
+
+#viewTable img{
+    height: 50px;
+    width: 100%;
+}
