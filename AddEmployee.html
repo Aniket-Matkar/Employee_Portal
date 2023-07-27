@@ -17,12 +17,9 @@
             <!-- <li> <a href="/ViewEntries.html">View Entries</a> </li> -->
         </ul>
     </nav>
-
-    <!-- ---------------------------------- Input Form ---------------------------------- -->
-    <!-- ---------------------------------- Input Form ---------------------------------- -->
     <!-- ---------------------------------- Input Form ---------------------------------- -->
     <div class="form_container">
-        <div id="employeeForm">
+        <form id="employeeForm">
             <h1>Add Employee</h1>
             <div id="error"></div>
             <label style="display: inline;" for="id">ID:</label>
@@ -55,13 +52,13 @@
             </select>
             <button class="button" type="button" onclick="addEmployee()">Add Employee</button>
 
-        </div>
+        </form>
     </div>
 
     <!-- ----------------------------------ViewModal----------------------------- -->
     <div id="viewModal" class="modal">
         <!-- Modal content -->
-        <div class="modal-content bgImg">
+        <div class="modal-content">
             <span id="close" onclick="closeViewModal()">CLOSE</span>
             <table id="viewTable">
                 <thead>
@@ -71,7 +68,7 @@
                         <th>Age</th>
                         <th>Designation</th>
                         <th>Gender</th>
-                        <th>Image</th>
+                        <!-- <th>Image</th> -->
                     </tr>
                 </thead>
                 <tbody class="viewModalBody">
@@ -82,8 +79,8 @@
 
 
     <!-- --------------------------------------editModal-------------------------------------------------- -->
-    <div id="editModal" class="modal">
-        <!-- Modal content -->
+    <!-- <div id="editModal" class="modal">
+        
         <div class="modal-content">
             <div ></div>
             <span id="closeEditModal" onclick="closeEditModal()">CLOSE</span>
@@ -105,9 +102,7 @@
             </form>
             <button type="submit" id="editModalSubmitButton" onclick="saveEditedEntry()">SAVE</button>
         </div>
-    </div>
-
-    <!-- --------------------------------------------------------------------------------- -->
+    </div> -->
 
     <h1>Employee Entries</h1>
     <table id="employeeTable">
@@ -129,8 +124,12 @@
 
 
 
-    <script src="data.js"></script>
-
+    <script src="displayEmployeeData.js"></script>
+    <script src="addEmployee.js"></script>
+    <script src="editEntry.js"></script>
+    <script src="deleteEntry.js"></script>
+    <script src="viewEntry.js"></script>
+    
 </body>
 
 </html>

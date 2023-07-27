@@ -29,11 +29,12 @@ nav ul li a {
 }
 
 /* -------------------------NAV BAR --------------------- */
-#error{
+#error {
     color: red;
     font-weight: bold;
 }
-#error2{
+
+#error2 {
     color: red;
     font-weight: bold;
 }
@@ -68,9 +69,17 @@ nav ul li a {
     flex-direction: column;
 }
 
-input,
-select {
+input{
     height: 20px;
+    padding: 1%;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 255, 0.438);
+    border-radius: 5px;
+}
+
+select {
+    height: 30px;
+    /* padding: 2%; */
     border: none;
     border-bottom: 2px solid rgba(0, 0, 255, 0.438);
     border-radius: 5px;
@@ -125,31 +134,35 @@ td img {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
+    /* background: #fefefe; */
+    background-image: url("");
+
     margin: 15% auto;
-    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    /* Could be more or less, depending on screen size */
 }
-.bgImg{
+
+.bgImg {
     background-image: url("") !important;
     /* z-index: 99; */
 }
 
 /* The Close Button */
 #close {
-    color: #b12b2b;
+    color: #ffffff;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.589);
     float: right;
     font-size: 15px;
     font-weight: bold;
 }
 
 #close:hover {
-    color: black;
+    color: rgb(187, 22, 22);
     text-decoration: none;
     cursor: pointer;
 }
@@ -160,12 +173,13 @@ td img {
     border-radius: 4px;
     padding: 9px 14px;
 }
-.modalImages{
+
+/* .modalImages {
     height: 150px;
     width: 300px;
 }
 
-#viewTable img{
+#viewTable img {
     height: 50px;
     width: 100%;
-}
+} */
