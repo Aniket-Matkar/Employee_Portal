@@ -1,4 +1,5 @@
 // localStorage.clear();
+var globalID = Number(0);
 displayEmployeeData();
 function addEmployee() {
     const id = Number(document.getElementById("id").value);
@@ -51,6 +52,7 @@ function addEmployee() {
         localStorage.setItem("employees", JSON.stringify(employees));
         displayEmployeeData();
     }
+    // displayEmployeeData();
     // document.getElementById("employeeForm").reset();
 }
 // --------------------------------------------------------------------
@@ -118,7 +120,7 @@ function editEntry(ID) {
     console.log(ID);
 
     let index = employees.findIndex(idx =>parseInt(idx.id) === ID);
-
+    globalID = Number(index);
     const employee = employees[index];
 
     console.log(employees[index],index);
@@ -146,7 +148,7 @@ function editEntry(ID) {
     </td>
     <td><input value="${employee.url}"/></td>
     `;
-    console.log('employee.url');
+    // console.log('employee.url');
     modalBody.appendChild(row);
     modal.style.display = "block";
 
@@ -157,14 +159,25 @@ function closeEditModal() {
 }
 // ---------------------------------------------
 function saveEditedEntry() {
-    const id = document.getElementById("Mid").value;
+    const id = Number(document.getElementById("Mid").value);
     const name = document.getElementById("Mname").value;
-    const age = document.getElementById("Mage").value;
+    const age = Number(document.getElementById("Mage").value);
     const designation = document.getElementById("Mdesignation").value;
     const gender = document.getElementById("Mgender").value;
-    const employees = JSON.parse(localStorage.getItem("employees")) || [];
-    const index = employees.findIndex(item => parseInt(item.id) === parseInt(id));
-    const employee = employees[index];
+
+    const employees = JSON.parse(localStorage.getItem("employees")) || []; // fetching employees data from localStorage
+    const idDBs = JSON.parse(localStorage.getItem("empID")) || [];      // fetching IDs from localStorage
+    // const index1 = employees.findIndex(item => console.log(item.id,id,typeof(item.id),typeof(id),"are babaa"));
+    console.log(globalID,'index');
+    const employee = employees[globalID];     // using global variable to avoid runtime change in employee array 
+    const idDB = idDBs[globalID];      // same as above
+    const index = idDBs.some(item => item.id===id);
+    console.log(index,"turu");
+    if(index){
+        alert('identical empID found in DB');
+        return;
+    }
+
     const error = document.getElementById("error");
     const InputRegex = /^[A-Za-z\s]+$/;
 
@@ -183,13 +196,16 @@ function saveEditedEntry() {
         error.innerHTML = "Invalid Age input";
         return;
     }
-    console.log("jiji");
+    console.log(employee,id,'first');
+    console.log(employee,id,'second');
+    idDB.id = id;
     employee.id = id;
     employee.name = name;
     employee.age = parseInt(age);
     employee.designation = designation;
     employee.gender = gender;
     localStorage.setItem("employees", JSON.stringify(employees));
+    localStorage.setItem("empID", JSON.stringify(idDBs));
     closeEditModal();
     displayEmployeeData();
 }
@@ -222,6 +238,26 @@ function deleteEntry(ID) {
 
         // Store the updated array back into local storage
         localStorage.setItem("employees", JSON.stringify(employees));
+
+        // Optionally, update the table to reflect the changes
+        displayEmployeeData();
+    } else {
+        alert("Entry not found in the array.");
+    }
+}
+function deleteEntryFromDB(ID) {
+    // Get the employee data from local storage
+    const empID = JSON.parse(localStorage.getItem("empID")) || [];
+
+    // Find the index of the entry with the given ID
+    const index = empID.findIndex(item => item.id === ID);
+
+    if (index !== -1) {
+        // Remove the entry from the array
+        empID.splice(index, 1);
+
+        // Store the updated array back into local storage
+        localStorage.setItem("empID", JSON.stringify(empID));
 
         // Optionally, update the table to reflect the changes
         displayEmployeeData();
