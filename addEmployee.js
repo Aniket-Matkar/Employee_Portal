@@ -1,5 +1,4 @@
-// localStorage.clear();
-var globalID = Number(0);
+// var globalID = Number(0);
 displayEmployeeData();
 function addEmployee() {
     const id = Number(document.getElementById("id").value);
@@ -28,27 +27,21 @@ function addEmployee() {
         gender: gender
     };
 
-    let employees = JSON.parse(localStorage.getItem("employees")) || [];// Get existing employee data from local storage
-    let empID = JSON.parse(localStorage.getItem("empID")) || [];// Get existing employee data from local storage
-    const isIdPresentInDB = empID.some(ID => ID.id === id);
-    if (isIdPresentInDB) {
+    // let employees = JSON.parse(localStorage.getItem("employees")) || [];// Get existing employee data from local storage
+    // let empID = JSON.parse(localStorage.getItem("empID")) || [];// Get existing employee data from local storage
+    const isIdPresentInempID = empID.some(ID => ID.id === id);
+    if (isIdPresentInempID) {
         error.innerHTML = "This employee ID is already taken";
     }
-    // const isIdPresentInEmployeeData= empID.some(ID => ID.id === id);
-    // if(isIdPresentInEmployeeData){
-
-    // }
-
     else {
         error.innerHTML = "";
         employees.push(newEmployee);    // Add the new employee to the existing data
         empID.push(newEmpID);    // Add the new employee to the existing data
-        localStorage.setItem("empID", JSON.stringify(empID));
-        localStorage.setItem("employees", JSON.stringify(employees));
+        // localStorage.setItem("empID", JSON.stringify(empID));
+        // localStorage.setItem("employees", JSON.stringify(employees));
         displayEmployeeData();
     }
-    // displayEmployeeData();
-    document.getElementById("employeeForm").reset();
+    // document.getElementById("employeeForm").reset();
 }
 
 function validate(id, name, age, designation, url, gender) {

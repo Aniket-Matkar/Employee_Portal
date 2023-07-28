@@ -1,6 +1,6 @@
 function editEntry(ID) {
-    const employees = JSON.parse(localStorage.getItem("employees")) || [];
-    let empID = JSON.parse(localStorage.getItem("empID")) || [];// Get existing employee data from local storage
+    // const employees = JSON.parse(localStorage.getItem("employees")) || [];
+    // let empID = JSON.parse(localStorage.getItem("empID")) || [];// Get existing employee data from local storage
     const index = employees.findIndex(item => item.id === ID);
     const empIDidx = empID.findIndex(item => item.id === ID);
     
@@ -18,8 +18,8 @@ function editEntry(ID) {
         employees.splice(index,1);
         empID.splice(empIDidx,1);
             
-        localStorage.setItem("employees", JSON.stringify(employees));
-        localStorage.setItem("empID", JSON.stringify(empID));
+        // localStorage.setItem("employees", JSON.stringify(employees));
+        // localStorage.setItem("empID", JSON.stringify(empID));
         
     }
 }

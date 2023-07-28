@@ -2,10 +2,9 @@
 // --------------------------------------------------------------------
 function viewEntry(ID) {
     var modal = document.getElementById("viewModal");
-    const employees = JSON.parse(localStorage.getItem("employees")) || [];
+    // const employees = JSON.parse(localStorage.getItem("employees")) || [];
     const index = employees.findIndex(item => item.id === ID);
     const employee = employees[index];
-
     const modalContent = document.querySelector(".modal-content");
     modalContent.style.backgroundImage = `url(${employee.url})`;
 

@@ -1,9 +1,46 @@
+var employees = [
+    {
+        id: 1,
+        name: "John Doe",
+        age: 33,
+        designation: "HR",
+        url: "https://www.hdwallpapers.in/download/color_paints-wide.jpg",
+        gender: "male"
+    },
+    {
+        id: 2,
+        name: "John",
+        age: 33,
+        designation: "HR",
+        url: "https://th.bing.com/th/id/R.e646a57f4241acca01bd56361bc0cb2a?rik=fgWDs6nlBBIA%2bg&riu=http%3a%2f%2fwww.zastavki.com%2fpictures%2f2560x1600%2f2011%2fCreative_Wallpaper_Color_spectrum_028498_.jpg&ehk=cSKataWiY%2fQFnV1qwsmWxO%2byOjO%2bLyJPInzD3UeE1CA%3d&risl=&pid=ImgRaw&r=0",
+        gender: "male"
+    },
+    {
+        id: 3,
+        name: "John singh",
+        age: 33,
+        designation: "HR",
+        url: "https://www.startupsgeek.com/wp-content/uploads/2019/10/colours-psychology.jpg",
+        gender: "male"
+    }
+];
+var empID = [{
+    id: 1
+    },
+    {
+    id: 2
+    },
+    {
+    id: 3
+    }
+];
+console.log(empID,employees,"checking ");
 
 function displayEmployeeData() {
  
     const table_body = document.querySelector("#employeeTable tbody");
     table_body.innerHTML = "";
-    const employees = JSON.parse(localStorage.getItem("employees")) || [];
+    // const employees = JSON.parse(localStorage.getItem("employees")) || [];
 
     employees.forEach(data => {
 
