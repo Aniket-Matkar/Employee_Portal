@@ -1,4 +1,7 @@
+// function to edit particular entry form employee table
 function editEntry(ID) {
+    const button = document.getElementById('clearButton');
+    button.style.display = "none";
     // const employees = JSON.parse(localStorage.getItem("employees")) || [];
     // let empID = JSON.parse(localStorage.getItem("empID")) || [];// Get existing employee data from local storage
     const index = employees.findIndex(item => item.id === ID);
@@ -13,8 +16,8 @@ function editEntry(ID) {
         document.getElementById("designation").value = employee.designation;
         document.getElementById("url").value = employee.url;
         document.getElementById("gender").value = employee.gender;
-        console.log(index);
-        console.log(empIDidx);
+        // console.log(index);
+        // console.log(empIDidx);
         employees.splice(index,1);
         empID.splice(empIDidx,1);
             

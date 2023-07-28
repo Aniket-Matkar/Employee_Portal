@@ -1,3 +1,4 @@
+// function to delete particular entry from the employee array
 function deleteEntry(ID) {
     // const employees = JSON.parse(localStorage.getItem("employees")) || [];
 
@@ -14,7 +15,7 @@ function deleteEntry(ID) {
     }
 }
 
-
+// function to delete particular entry from the empID array
 function deleteEntryFromDB(ID) {
     // const empID = JSON.parse(localStorage.getItem("empID")) || [];
 

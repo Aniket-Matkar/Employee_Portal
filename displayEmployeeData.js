@@ -24,7 +24,8 @@ var employees = [
         gender: "male"
     }
 ];
-var empID = [{
+var empID = [
+    {
     id: 1
     },
     {
@@ -34,8 +35,8 @@ var empID = [{
     id: 3
     }
 ];
-console.log(empID,employees,"checking ");
 
+//function to display all entries in the employee table
 function displayEmployeeData() {
  
     const table_body = document.querySelector("#employeeTable tbody");
@@ -65,4 +66,4 @@ function displayEmployeeData() {
         modal.style.display = "none"; // modal close 
     }
 }
-// --------------------------------------------------------------------
+

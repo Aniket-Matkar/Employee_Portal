@@ -1,5 +1,7 @@
 // var globalID = Number(0);
 displayEmployeeData();
+
+// function to add employee entry to the table from the FORM
 function addEmployee() {
     const id = Number(document.getElementById("id").value);
     const name = document.getElementById("name").value;
@@ -9,6 +11,9 @@ function addEmployee() {
     const gender = document.getElementById('gender').value;
     // const InputRegex = /^[A-Za-z\s]+$/;
     const error = document.getElementById("error");
+
+    const button = document.getElementById('clearButton');
+    button.style.display = "block";
 
     const isValidate = validate(id, name, age, designation, url, gender);
 
@@ -41,9 +46,10 @@ function addEmployee() {
         // localStorage.setItem("employees", JSON.stringify(employees));
         displayEmployeeData();
     }
-    // document.getElementById("employeeForm").reset();
+    document.getElementById("employeeForm").reset();
 }
 
+// VALIDATION FUNCTION
 function validate(id, name, age, designation, url, gender) {
     const error = document.getElementById("error");
     const InputRegex = /^[A-Za-z\s]+$/;
@@ -65,3 +71,7 @@ function validate(id, name, age, designation, url, gender) {
         return true;
     }
 }
+
+function reserForm(){
+    document.getElementById("employeeForm").reset();
+};

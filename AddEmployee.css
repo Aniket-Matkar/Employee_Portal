@@ -40,7 +40,6 @@ nav ul li a {
 }
 
 .form_container {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     border-radius: 8px;
     background: white;
     margin: 1% auto;
@@ -48,28 +47,65 @@ nav ul li a {
     /* display: flex; */
     justify-content: center;
     width: 40%;
+    transition: all 0.5s ease-out;
+    transform: scale(0.9);
+
+}
+
+.form_container:hover {
+    background: rgb(243, 241, 241);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: all 0.2s ease-in;
+    transform: scale(1);
 }
 
 .form_items {
     margin: 3px;
 }
 
-.button {
-    margin-top: 5px;
-    padding: 5px;
+.button1 {
+    margin-top: 10px;
+    padding: 8px;
     width: 100%;
-    background: blue;
+    background: rgb(255, 255, 255);
     border: 2px solid rgb(0, 0, 0);
-    border-radius: 4px;
-    color: white;
+    border-radius: 7px;
+    color: rgb(0, 0, 0);
+    transition: all 0.5s ease;
 }
+
+.button1:hover {
+    background-color: green;
+    color: white;
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+}
+
+.button2 {
+    margin-top: 10px;
+    padding: 8px;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 7px;
+    transition: all 0.5s ease;
+    color: rgb(0, 0, 0);
+}
+
+.button2:hover {
+    background-color: rgba(255, 0, 0, 0.822);
+    color: white;
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+}
+
 
 #employeeForm {
     display: flex;
     flex-direction: column;
 }
 
-input{
+input {
     height: 20px;
     padding: 1%;
     border: none;
@@ -86,12 +122,6 @@ select {
 }
 
 /* ------------------------------------------------- */
-
-/* .container{
-    margin: 5px;
-    width: 100vw;
-} */
-
 table {
     margin: 5%;
     border-collapse: collapse;
@@ -146,10 +176,8 @@ td img {
 
 .bgImg {
     background-image: url("") !important;
-    /* z-index: 99; */
 }
 
-/* The Close Button */
 #close {
     color: #ffffff;
     border: 1px solid black;
@@ -173,13 +201,3 @@ td img {
     border-radius: 4px;
     padding: 9px 14px;
 }
-
-/* .modalImages {
-    height: 150px;
-    width: 300px;
-}
-
-#viewTable img {
-    height: 50px;
-    width: 100%;
-} */
